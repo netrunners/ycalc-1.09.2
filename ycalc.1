@@ -1,0 +1,233 @@
+.\"     The YCALC man page
+.\"     groff -man -Tascii ycalc.1 | more 
+.\"
+.\"     Created from original ycalc MANUAL file Mon Dec  1 23:13:33 GMT 1997
+.\"     by  ben @dl6rai.muc.de
+.\" 
+.\"     additions by un@pobox.com
+.\"     980122 : added url to archive
+.\"     980205 : description of LRN SST BST GTO RST R/S
+.TH YCALC 1 "YCALC 1.1 -- 20 Dec 1997" GNU
+.SH NAME
+ycalc \- An X Window Calculator, Based on Texas Instruments TI\-59
+
+.SH SYNOPSIS
+ycalc
+
+.SH DESCRIPTION
+Scientific calculator for X-windows, heavily influenced by TI-59.
+Named 
+.IR ycalc 
+to avoid confusion with 
+.IR xcalc .
+
+Operation of the calculator is performed by clicking with any of the
+mouse buttons on the keys, or - in many cases - by using the keyboard.
+.PP
+.SS Calculator key usage
+.TP
+\fB0 1 2 3 4 5 6 7 8 9 . / x - + = ( ) +/-\fP
+Do the same as on every calculator, the calculator follows standard
+operator precedence which can be altered using 
+\fB(\fP and \fB)\fP.
+.TP
+\fBCE\fP
+Clear entry, clears the last entry, ie. the X register.
+.TP
+\fBCLR\fP
+Clears the calculator stack.
+.TP
+\fBEE\fP
+Enter exponent.
+.TP
+\fB2nd\fP
+Makes available a second function for certain keys, these keys changes
+when \fB2nd\fP is pressed (see 
+.SM
+.B 2nd function keys
+below).
+.TP
+\fBINV\fP
+Inverts the function of cartain keys.
+.TP
+\fBLRN\fP
+Toggle between programming (LeaRN) and normal mode.
+.TP
+\fBSST\fP
+Single step, in programming mode step to show next program line, in normal
+mode execute one program line.
+.TP
+\fBBST\fP
+Back step, in programming mode step to show previous program line, no effect
+in normal mode.
+.TP
+\fBGTO\fP
+Goto a specific program line, not implemented yet.
+.TP
+\fBRST\fP
+Reset program counter to line 0.
+.TP
+\fBR/S\fP
+Toggle between Run and Stop of program.
+.TP
+\fBA B C D E F\fP
+For entering hex digits when the calculator is in base 16 mode.
+.TP
+\fBSTO\fP
+Stores the X register in one of memory 00-99, the next two digits entered
+defines the memory number.
+.TP
+\fBRCL\fP
+Recall one of memory 00-99 to the X register, the next two digits entered
+defines the memory number.
+.TP
+\fBSUM\fP
+Adds the X register to the contents in memory 00-99, the next two digits
+entered are the memory number.
+.TP
+\fBHex\fP
+Places the calculator in hex (base 16) mode.
+.TP
+\fBDec\fP
+Places the calculator in decimal (base 10) mode.
+.TP
+\fBBin\fP
+Brings up the binary window.
+.TP
+\fBx<->t\fP
+Exchange the X and T registers.
+.TP
+\fBx^2\fP
+Squares the X register.
+.TP
+\fBsqrt\fP
+Calcuates the square root of the X register.
+.TP
+\fB1/x\fP
+Inverts the X register.
+.TP
+\fBy^x\fP
+Raises Y register to X:th power.
+.TP
+\fBlnx\fP
+Caclulates the natural logarithm of the X register.
+.TP
+\fBOff\fP
+Exits the calculator if pressed twice without any other key between.
+.TP
+\fBAbout\fP
+Brings up a window with version information and short copyright and
+GNU license information.
+.PP
+.SS 2nd function keys
+.TP
+\fBRad\fP
+Puts the calculator in radian mode for trigonometric functions.
+.TP
+\fBDeg\fP
+Puts the calculator in degree mode for trigonometric functions.
+.TP
+\fBPi\fP
+Enters an approximation of PI into the x register.
+.TP
+\fBEng\fP
+Puts the calculator in engineering exponent mode, ie. the exponent
+is a multiple of three.
+.TP
+\fBCMs\fP
+Clear all memories.
+.TP
+\fBExc\fP
+Exchanges one of memory 00-99 with the X register, the next two digits
+entered defines the memory number.
+.TP
+\fBPrd\fP
+Multiplies the X register with one of memory 00-99, the next two digits
+entered defines the memory number.
+.TP
+\fBsin\fP
+Calculates the sine of the X register.
+.TP
+\fBcos\fP
+Calculates the cosine of the X register.
+.TP
+\fBtan\fP
+Calculates the tangent of the X register.
+.TP
+\fB1st\fP
+Reverts keys to the normal function.
+.TP
+\fBINV\fP
+Inverts the function of cartain keys.
+.TP
+\fBlog\fP
+Calculates the 10 logarithm of the X register.
+.TP
+\fBCP\fP
+Clear program.
+.TP
+\fBOff\fP
+Exits the calculator if pressed twice without any other key between.
+.TP
+\fBAsc\fP
+Brings up the ASCII table window.
+.TP
+\fBOct\fP
+Places the calculator in octal (base 8) mode.
+.TP
+\fBx!\fP
+Calculates the faculty of the X register.
+.TP
+\fBCut\fP
+Copies the X window global paste buffer to the X register.
+.TP
+\fBPas\fP
+Copies the X register to the X window global paste buffer.
+.TP
+\fBMod\fP
+The modulus operator.
+.TP
+\fBDMs\fP
+Brings up the memory window.
+
+.PP
+.SS Binary window
+The binary window has three rows of 32-bit binary display, three markers
+to right of the binary display rows and eleven buttons.
+
+The bits of the binary display rows can set/cleared by clicking with any
+of the mouse buttons on it. The three markers selects, by clicking on one
+of them, which binary display row is the active. The active row is the one
+mirroring the main calculator display and the one affected by the 
+\fBshift\fP, \fBrotate\fP and \fBinv\fP keys.
+
+The three operator keys - \fBand\fP, \fBor\fP & \fBxor\fP - 
+operate on row 
+.IR one 
+& 
+.IR two 
+and put the result in row 
+.IR three .
+
+.PP
+.SS ASCII table window
+The ASCII table window has a main area with the ASCII table, a four
+character display at the left upper corner and an \fBoff\fP key at the upper
+right corner.
+
+The display mirrors the main calculator display but is displaying it as
+four ASCII characters instead.
+By clicking with a mouse button on an ASCII table entry, its value is
+entered into the calulator display.
+
+.PP
+.SS Memory window
+The memory window displays the contents of twenty of the calculator
+memories. By clicking a mouse button on the keys, the previous twenty or
+the next twenty are displayed.
+
+.SH AUTHOR
+Ulf Nordquist <un@pobox.com>.
+
+.SH LOCATION
+Archive at http://www.pobox.com/~un/ycalc.html
